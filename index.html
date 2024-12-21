@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>360° Virtual Tour</title>
+  <!-- Include Pannellum CSS from jsDelivr CDN -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+  <!-- Responsive Meta Tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+    #panorama {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Panorama Container -->
+  <div id="panorama"></div>
+
+  <!-- Include Pannellum JS from jsDelivr CDN -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+  <!-- Initialize Pannellum -->
+  <script>
+    pannellum.viewer('panorama', {
+      "default": {
+        "firstScene": "dining",
+        "author": "Your Name",
+        "sceneFadeDuration": 1000,
+        "autoLoad": true,
+        "compass": true,
+        "showControls": true,
+        "showFullscreenCtrl": true
+      },
+      "scenes": {
+        "dining": {
+          "title": "Dining",
+          "type": "equirectangular",
+          "panorama": "DiningVR.jpg",
+          "hotSpots": [
+            {
+              "pitch": 0,
+              "yaw": 45,
+              "type": "scene",
+              "text": "Go to Great Room",
+              "sceneId": "greatroom"
+            },
+            {
+              "pitch": 0,
+              "yaw": -45,
+              "type": "scene",
+              "text": "Go to Kitchen",
+              "sceneId": "kitchen"
+            },
+            {
+              "pitch": 0,
+              "yaw": 90,
+              "type": "scene",
+              "text": "Go to Master Bedroom",
+              "sceneId": "masterbed"
+            }
+          ]
+        },
+        "greatroom": {
+          "title": "Great Room",
+          "type": "equirectangular",
+          "panorama": "GreatRoomVR.jpg",
+          "hotSpots": [
+            {
+              "pitch": 0,
+              "yaw": 45,
+              "type": "scene",
+              "text": "Go to Dining",
+              "sceneId": "dining"
+            },
+            {
+              "pitch": 0,
+              "yaw": -45,
+              "type": "scene",
+              "text": "Go to Rec. Room",
+              "sceneId": "recroom"
+            }
+          ]
+        },
+        "kitchen": {
+          "title": "Kitchen",
+          "type": "equirectangular",
+          "panorama": "KitchenVR.jpg",
+          "hotSpots": [
+            {
+              "pitch": 0,
+              "yaw": 45,
+              "type": "scene",
+              "text": "Go to Dining",
+              "sceneId": "dining"
+            },
+            {
+              "pitch": 0,
+              "yaw": -45,
+              "type": "scene",
+              "text": "Go to Master Bedroom",
+              "sceneId": "masterbed"
+            },
+            {
+              "pitch": 0,
+              "yaw": 90,
+              "type": "scene",
+              "text": "Go to Laundry",
+              "sceneId": "laundry"
+            },
+            {
+              "pitch": 0,
+              "yaw": 135,
+              "type": "scene",
+              "text": "Go to Bedroom 2",
+              "sceneId": "bed2"
+            }
+          ]
+        },
+        "masterbed": {
+          "title": "Master Bedroom",
+          "type": "equirectangular",
+          "panorama": "MasterBedVR.jpg",
+          "hotSpots": [
+            {
+              "pitch": 0,
+              "yaw": 45,
+              "type": "scene",
+              "text": "Go to Dining",
+              "sceneId": "dining"
+            },
+            {
+              "pitch": 0,
+              "yaw": -45,
+              "type": "scene",
+              "text": "Go to Master Bath",
+              "sceneId": "masterbath"
+            }
+          ]
+        },
+        "recroom": {
+          "title": "Rec. Room",
+          "type": "equirectangular",
+          "panorama": "RecRoomVR.jpg",
+          "hotSpots": [
+            {
+              "pitch": 0,
+              "yaw": 45,
+              "type": "scene",
+              "text": "Go to Dining",
+              "sceneId": "dining"
+            },
+            {
+              "pitch": 0,
+              "yaw": 90,
+              "type": "scene",
+              "text": "Go to Bedroom 3",
+              "sceneId": "bed3"
+            },
+            {
+              "pitch": 0,
+              "yaw": 135,
+              "type": "scene",
+              "text": "Go to Bath 3",
+              "sceneId": "bath3"
+            },
+            {
+              "pitch": 0,
+              "yaw": -90,
+              "type": "scene",
+              "text": "Go to Bunk Room",
+              "sceneId": "bunk"
+            },
+            {
+              "pitch": 0,
+              "yaw": -45,
+              "type": "scene",
+              "text": "Go to Bedroom 4",
+              "sceneId": "bed4"
+            }
+          ]
+        },
+        "laundry": {
+          "title": "Laundry",
+          "type": "equirectangular",
+          "panorama": "LaundryVR.jpg",
+          "hotSpots": [
+            {
+              "pitch": 0,
+              "yaw": 45,
+              "type": "scene",
+              "text": "Go to Kitchen",
+              "sceneId": "kitchen"
+            },
+            {
+              "pitch": 0,
+              "yaw": -45,
+              "type": "scene",
+              "text": "Go to Bedroom 2",
+              "sceneId": "bed2"
+            }
+          ]
+        },
+        "bed2": {
+          "title": "Bedroom 2",
+          "type": "equirectangular",
+          "panorama": "Bed2VR.jpg",
+          "hotSpots": [
+            {
+              "pitch": 0,
+              "yaw": 45,
+              "type": "scene",
+              "text": "Go to Kitchen",
+              "sceneId": "kitchen"
+            },
+            {
+              "pitch": 0,
+              "yaw": -45,
+              "type": "scene",
+              "text": "Go to Bath 2",
+              "sceneId": "bath2"
+            }
+          ]
+        },
+        "masterbath": {
+          "title": "Master Bath",
+          "type": "equirectangular",
+          "panorama": "MasterBathVR.jpg",
+          "hotSpots": [
+            {
+              "pitch": 0,
+              "yaw": 45,
+              "type": "scene",
+              "text": "Go to Master Bedroom",
+              "sceneId": "masterbed"
+            }
+          ]
+        },
+        "bath2": {
+          "title": "Bath 2",
+          "type": "equirectangular",
+          "panorama": "Bath2VR.jpg",
+          "hotSpots": [
+            {
+              "pitch": 0,
+              "yaw": 45,
+              "type": "scene",
+              "text": "Go to Bedroom 2",
+              "sceneId": "bed2"
+            }
+          ]
+        },
+        "bed3": {
+          "title": "Bedroom 3",
+          "type": "equirectangular",
+          "panorama": "Bed3VR.jpg",
+          "hotSpots": [
+            {
+              "pitch": 0,
+              "yaw": 45,
+              "type": "scene",
+              "text": "Go to Rec. Room",
+              "sceneId": "recroom"
+            },
+            {
+              "pitch": 0,
+              "yaw": -45,
+              "type": "scene",
+              "text": "Go to Bath 3",
+              "sceneId": "bath3"
+            }
+          ]
+        },
+        "bath3": {
+          "title": "Bath 3",
+          "type": "equirectangular",
+          "panorama": "Bath3VR.jpg",
+          "hotSpots": [
+            {
+              "pitch": 0,
+              "yaw": 45,
+              "type": "scene",
+              "text": "Go to Rec. Room",
+              "sceneId": "recroom"
+            },
+            {
+              "pitch": 0,
+              "yaw": -45,
+              "type": "scene",
+              "text": "Go to Bedroom 3",
+              "sceneId": "bed3"
+            }
+          ]
+        },
+        "bunk": {
+          "title": "Bunk Room",
+          "type": "equirectangular",
+          "panorama": "BunkVR.jpg",
+          "hotSpots": [
+            {
+              "pitch": 0,
+              "yaw": 45,
+              "type": "scene",
+              "text": "Go to Rec. Room",
+              "sceneId": "recroom"
+            }
+          ]
+        },
+        "bed4": {
+          "title": "Bedroom 4",
+          "type": "equirectangular",
+          "panorama": "Bed4VR.jpg",
+          "hotSpots": [
+            {
+              "pitch": 0,
+              "yaw": 45,
+              "type": "scene",
+              "text": "Go to Rec. Room",
+              "sceneId": "recroom"
+            },
+            {
+              "pitch": 0,
+              "yaw": -45,
+              "type": "scene",
+              "text": "Go to Bath 4",
+              "sceneId": "bath4"
+            }
+          ]
+        },
+        "bath4": {
+          "title": "Bath 4",
+          "type": "equirectangular",
+          "panorama": "Bath4VR.jpg",
+          "hotSpots": [
+            {
+              "pitch": 0,
+              "yaw": 45,
+              "type": "scene",
+              "text": "Go to Bedroom 4",
+              "sceneId": "bed4"
+            }
+          ]
+        }
+      }
+    });
+  </script>
+</body>
+</html>
