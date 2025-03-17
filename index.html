@@ -29,7 +29,7 @@
 
   <!-- Initialize Pannellum -->
   <script>
-    var viewer = pannellum.viewer('panorama', {
+    pannellum.viewer('panorama', {
       "default": {
         "firstScene": "dining",
         "author": "www.3dvirtualdesigns.com",
@@ -373,26 +373,7 @@
         }
       }
     });
-    // Function to stop rotation on user interaction
-    function stopAutoRotate() {
-      viewer.setYaw(viewer.getYaw());  // Stop rotation by setting yaw to current position
-      clearTimeout(autoRotateTimeout); // Clear timeout to restart rotation
-    }
-
-    // Function to restart rotation after 5 seconds of inactivity
-    function restartAutoRotate() {
-      autoRotateTimeout = setTimeout(function () {
-        viewer.setYawRotate(-2);  // Restart auto-rotation
-      }, 5000);
-    }
-
-    // Listen for user interaction
-    var autoRotateTimeout;
-    viewer.on("mousedown", stopAutoRotate);
-    viewer.on("mousemove", stopAutoRotate);
-    viewer.on("mouseup", restartAutoRotate);
-    viewer.on("mouseleave", restartAutoRotate);
-    
+        
   </script>
 </body>
 </html>
