@@ -32,13 +32,14 @@
     pannellum.viewer('panorama', {
       "default": {
         "firstScene": "dining",
-        "author": "www.3dvirtualdesigns.com",
+        "author": "www.3dvirtual-designs.com",
         "sceneFadeDuration": 1000,
         "autoLoad": true,
         "compass": true,
         "showControls": true,
         "showFullscreenCtrl": true,
-        "yawRotate": -4  // Initial auto-rotation speed
+        "autoRotate": -2,  // Rotation speed in degrees per second
+        "autoRotateInactivityDelay": 5000  // Delay in milliseconds
       },
       "scenes": {
         "dining": {
