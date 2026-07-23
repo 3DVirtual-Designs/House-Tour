@@ -18,12 +18,56 @@
       width: 100%;
       height: 100%;
     }
+
+/* Styling for the top-right overlay box */
+        .global-info-overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .info-header {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Hidden by default */
+        .info-content {
+            max-height: 0;
+            overflow: hidden;
+            width: 320px;
+            font-size: 14px;
+            line-height: 1.5;
+            transition: max-height 0.4s ease-out, margin-top 0.3s;
+        }
+
+        /* Show content when mouse hovers over the element */
+        .global-info-overlay:hover .info-content {
+            max-height: 400px;
+            margin-top: 10px;
+        }
+    
+    
   </style>
 </head>
 <body>
   <!-- Panorama Container -->
   <div id="panorama"></div>
-
+<!-- Global Disclaimer Text Overlay -->
+        <div class="global-info-overlay">
+            <div class="info-header">
+                <span>ℹ️ Disclaimer</span>
+            </div>
+            <div class="info-content">
+                <!-- TYPE YOUR ONE PARAGRAPH HERE -->
+                <p>This virtual tour is based on preliminary plans and is for illustrative purposes only. The finished home, including its layout, features, finishes, dimensions, square footage, and elevations, may differ from what is shown. Some features may be optional upgrades. Plans, specifications, and homesite availability are subject to change without notice. Please consult the sales representative for current details.</p>
+            </div>
   <!-- Include Pannellum JS from jsDelivr CDN -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 
