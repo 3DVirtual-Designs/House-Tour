@@ -42,7 +42,7 @@
     }
     /* Styling */
     .always‑label .pnlm-tooltip span {
-	  font-size: max(10px, 0.65vw) !important; /*remove*/
+	  font-size: max(12px, 0.7vw) !important; /*remove*/
   	  padding: 0.25em 0.5em !important; /* Uses font-relative padding (remove)*/
       background: rgba(0,0,0,0.5);
       color: white;
@@ -79,16 +79,16 @@
             overflow: hidden;
             width: 25vw; /*was 200px*/
 			min-width: 130px;  /* Safety fallback: Won't collapse smaller than 180px on phones (remove)*/
-  			max-width: 300px;  /* Safety fallback: Won't grow wider than 260px on huge screens (remove)*/
-            font-size: max(11px, 0.55vw) !important; /*was 11px remove !important*/
+  			max-width: 400px;  /* Safety fallback: Won't grow wider than 260px on huge screens (remove)*/
+            font-size: max(12px, 0.6vw) !important; /*was 11px remove !important*/
             line-height: 1.25;
             transition: max-height 0.4s ease-out, margin-top 0.3s;
         }
 
         /* Show content when mouse hovers over the element */
         .global-info-overlay:hover .info-content {
-            max-height: 300px;
-            margin-top: 10px;
+            max-height: 250px;
+            margin-top: 5px;
         }
     
     
